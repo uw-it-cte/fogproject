@@ -40,6 +40,7 @@ class HostManagementPage extends FOGPage
 			_('Task'),
 			_('Edit/Remove'),
 			_('Image'),
+			_('User'),
 		);
 		// Row templates
 		$this->templates = array(
@@ -50,7 +51,8 @@ class HostManagementPage extends FOGPage
 			($LocPluginInst ? '${location}<br/><small>${deployed}</small>' : '<small>${deployed}</small>'),
 			'<a href="?node=host&sub=deploy&sub=deploy&type=1&id=${host_id}"><span class="icon icon-download" title="Download"></span></a> <a href="?node=host&sub=deploy&sub=deploy&type=2&id=${host_id}"><span class="icon icon-upload" title="Upload"></span></a> <a href="?node=host&sub=deploy&type=8&id=${host_id}"><span class="icon icon-multicast" title="Multi-cast"></span></a> <a href="?node=host&sub=edit&id=${host_id}#host-tasks"><span class="icon icon-deploy" title="Deploy"></span></a>',
 			'<a href="?node=host&sub=edit&id=${host_id}"><span class="icon icon-edit" title="Edit"></span></a> <a href="?node=host&sub=delete&id=${host_id}"><span class="icon icon-delete" title="Delete"></span></a>',
-			'${image_name}',
+			'<nobr>${image_name}</nobr>',
+			'<a href="?node=host&sub=edit&id=${host_id}#host-hardware-inventory"><nobr>${inv_user}</nobr></a>',
 		);
 		// Row attributes
 		$this->attributes = array(
@@ -81,6 +83,7 @@ class HostManagementPage extends FOGPage
 			{
 				$LA = ($LocPluginInst ? current($this->FOGCore->getClass('LocationAssociationManager')->find(array('hostID' => $Host->get('id')))) : '');
 				$Location = ($LA ? new Location($LA->get('locationID')) : '');
+				$Inventory = $Host->get('inventory') ? current($Host->get('inventory')) : new Inventory(array('id' => '0'));
 				$this->data[] = array(
 					'host_id'	=> $Host->get('id'),
 					'deployed' => checkdate($this->FOGCore->formatTime($Host->get('deployed'),'m'),$this->FOGCore->formatTime($Host->get('deployed'),'d'),$this->FOGCore->formatTime($Host->get('deployed'),'Y')) ? $this->FOGCore->formatTime($Host->get('deployed')) : 'No Data',
@@ -89,6 +92,7 @@ class HostManagementPage extends FOGPage
 					'host_desc'  => $Host->get('description'),
 					'image_name' => $Host->getImage()->get('name'),
 					'location' => ($Location && $Location->isValid() ? $Location->get('name') : ''),
+					'inv_user' => $Inventory->get('primaryUser'),
 				);
 			}
 		}
