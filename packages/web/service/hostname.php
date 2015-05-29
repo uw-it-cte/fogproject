@@ -22,8 +22,8 @@ try
 	if (trim(base64_decode($Host->get('productKey'))))
 		print "\n#Key=".base64_decode($Host->get('productKey'));
 	// Just inform the user (probably not needed and probably won't display.)
-	if (!$Host->get('useAD'))
-		throw new Exception("#!er: Join domain disabled on this host.\n");
+#	if (!$Host->get('useAD'))
+#		throw new Exception("#!er: Join domain disabled on this host.\n");
 }
 catch (Exception $e)
 {
