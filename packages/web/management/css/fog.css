@@ -48,8 +48,8 @@ fieldset { border: 1px solid #94C3D3; border-radius: 5px; margin-bottom: 40px; p
 /*input { min-width: 200px; }*/
 input, textarea, select { font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 13px; color: #333333; border: 1px solid #94c3d3; border-radius: 3px; background-color: #fff; vertical-align: top; padding: 4px 8px; }
 select { padding: 4px 3px 4px 8px; }
-input[type="password"] { width: 200px; }
-input[type="text"] { width: 200px; }
+input[type="password"] { width: 320px; }
+input[type="text"] { width: 320px; }
 input[type="text"]:focus { padding-right: 8px; }
 input:focus, textarea:focus { border-color: #5372af; background-image: url('../images/icon_pencil.png'); background-repeat: no-repeat; background-position: 97% center; }
 .hideShowPassword-toggle {
