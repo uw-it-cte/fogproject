@@ -94,8 +94,8 @@ fieldset table tbody td select { min-width: 220px; }
 #menu a:hover {  }
 
 /* Structure */
-#wrapper { width: 1250px; margin: 0 auto; min-height: 100%; }
-#content { float: right; width: 1020px; padding-bottom: 21px; background: url(../images/content-bkg.png) no-repeat center top; }
+#wrapper { width: 1050px; margin: 0 auto; min-height: 100%; }
+#content { float: right; width: 820px; padding-bottom: 21px; background: url(../images/content-bkg.png) no-repeat center top; }
 #content-inner {padding: 0 10px; padding-bottom: 21px;}
 #content h1 { text-align: center; height: 50px; line-height: 50px; color: #666; margin: 0; }
 #content h2 { font-size: 18px; text-align: center; margin: 7px 0; padding: 5px 0; }
