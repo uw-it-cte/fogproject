@@ -76,7 +76,7 @@ class TaskManagementPage extends FOGPage
 				'type'	=> $Task->getTaskTypeText(),
 				'percentText' => $Task->get('percent'),
 				'class' => ++$i % 2 ? 'alt2' : 'alt1',
-				'width' => 600 * ($Task->get('percent')/100),
+				'width' => 1000 * ($Task->get('percent')/100),
 				'elapsed' => $Task->get('timeElapsed'),
 				'remains' => $Task->get('timeRemaining'),
 				'percent' => $Task->get('percent'),
